@@ -1,0 +1,165 @@
+# ==============================================================================
+# SPENDLY — GITIGNORE
+# Comprehensive security & build artifact exclusions for Python + Next.js + Docker
+# ==============================================================================
+
+# ------------------------------------------------------------------------------
+# 1. SENSITIVE CREDENTIALS & ENVIRONMENT FILES (CRITICAL SECURITY)
+# ------------------------------------------------------------------------------
+# Never commit real secrets, API keys, passwords or tokens!
+.env
+.env.*
+*.env
+*.env.*
+!.env.example
+!.env.*.example
+!.env.local.example
+
+# Private keys, certificates & credentials
+*.pem
+*.key
+*.cert
+*.crt
+*.pfx
+*.p12
+*.pub
+credentials.json
+client_secret*.json
+token.json
+service-account*.json
+
+# ------------------------------------------------------------------------------
+# 2. LOCAL DATABASES, VOLUMES & UPLOADED USER DATA
+# ------------------------------------------------------------------------------
+*.db
+*.db-journal
+*.sqlite
+*.sqlite3
+*.sqlite3-journal
+
+# Database storage directories & snapshots
+postgres_data/
+qdrant_storage/
+qdrant_snapshots/
+data/
+
+# User uploads & temporary receipt storage
+uploads/
+receipts/
+media/
+tmp/
+temp/
+scratch/
+query
+
+# ------------------------------------------------------------------------------
+# 3. PYTHON ARTIFACTS & VIRTUAL ENVIRONMENTS
+# ------------------------------------------------------------------------------
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# C extensions & build output
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# Virtual environments
+.venv/
+venv/
+env/
+ENV/
+env.bak/
+venv.bak/
+
+# Testing & quality caches
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+.coverage
+.coverage.*
+nosetests.xml
+coverage.xml
+*.cover
+htmlcov/
+.tox/
+.nox/
+
+# ------------------------------------------------------------------------------
+# 4. NODE.JS & NEXT.JS ARTIFACTS
+# ------------------------------------------------------------------------------
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+.pnpm-store/
+
+# Next.js build output & caches
+.next/
+out/
+.turbo/
+
+# TypeScript build cache
+*.tsbuildinfo
+
+# Vercel deployment cache
+.vercel/
+
+# ------------------------------------------------------------------------------
+# 5. DOCKER & CONTAINER OVERRIDES
+# ------------------------------------------------------------------------------
+docker-compose.override.yml
+docker-compose.override.yaml
+compose.override.yml
+compose.override.yaml
+*.docker.local
+
+# ------------------------------------------------------------------------------
+# 6. OPERATING SYSTEM & EDITOR / IDE SPECIFIC
+# ------------------------------------------------------------------------------
+# macOS
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+
+# Windows
+Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+ehthumbs_vista.db
+*.stackdump
+[Dd]esktop.ini
+
+# Editors
+.vscode/
+!.vscode/extensions.json
+.idea/
+*.sublime-project
+*.sublime-workspace
+*.swp
+*.swo
+*~
+
+# AI agent caches & scratchpads
+.gemini/
+.claude/
+.cursor/
